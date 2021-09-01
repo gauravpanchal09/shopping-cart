@@ -1,0 +1,31 @@
+<div class="log">
+  <h2>Welcome Back</h2>
+  <!-- Errors -->
+  <div *ngIf="errors?.email" class="alert alert-danger mt-3">
+    {{ errors?.email }}
+  </div>
+  <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+    {{ errors?.password }}
+  </div>
+  <div *ngIf="errors?.error" class="alert alert-danger mt-3">
+    {{ errors?.error }}
+  </div>
+  <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="input-cont">
+      <input type="email" formControlName="email" />
+      <label>Email</label>
+      <div class="border1"></div>
+    </div>
+    <div class="input-cont">
+      <input type="password" formControlName="password" />
+      <label>Password</label>
+      <div class="border2"></div>
+    </div>
+    <!-- <span class="check">
+        <input type="checkbox"> <label>Remember Me</label>
+      </span> -->
+    <!-- <a href="#">Forgot Password</a> -->
+    <div class="clear"></div>
+    <button type="submit">Log in</button>
+  </form>
+</div>
